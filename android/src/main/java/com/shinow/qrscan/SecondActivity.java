@@ -94,6 +94,11 @@ public class SecondActivity extends AppCompatActivity {
         backLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent resultIntent = new Intent();
+                Bundle bundle = new Bundle();
+                bundle.putInt(CodeUtils.RESULT_TYPE, CodeUtils.RESULT_FAILED);
+                resultIntent.putExtras(bundle);
+                SecondActivity.this.setResult(RESULT_OK, resultIntent);
                 SecondActivity.this.finish();
             }
         });
